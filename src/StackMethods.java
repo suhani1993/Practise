@@ -13,7 +13,8 @@ public class StackMethods {
 		System.out.println(stack.empty());
 		System.out.println(stack.peek());
 		
-//		System.out.println(stack.pop());
+		System.out.println(stack.pop());
+		System.out.println("size :: " + stack.size());
 		
 		System.out.println(stack.search(556));
 		System.out.println(stack.search(12));

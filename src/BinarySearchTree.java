@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 
-public class BinaryTree {
+public class BinarySearchTree {
 	
 	Node root;
 	public static void main(String[] args) {
-		BinaryTree binaryTree = new BinaryTree();
+		BinarySearchTree binaryTree = new BinarySearchTree();
 		binaryTree.add(9);
 		binaryTree.add(6);
 		binaryTree.add(4);
@@ -270,13 +270,10 @@ public class BinaryTree {
 		}
 		if(value < current.value){
 			current.left = addRecursive(current.left, value);
-			return current;
 		}else if(value > current.value){
 			current.right = addRecursive(current.right, value);
-			return current;
-		}else{
-			return current;
 		}
+		return current;
 	}
 }
 

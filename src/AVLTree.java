@@ -1,4 +1,16 @@
-
+/*
+ * It is self balancing tree
+ * After every insertion or deletion, balance factor is checked
+ * Balance factor of a node could be only 1, 0 or -1
+ * Balance factor of a node = height(left subtree) - height(right subtree)
+ * Binary tree can be balanced by 
+ * 1. left rotate only
+ * 2. right rotate only
+ * 3. first left and then right rotate
+ * 4. first right and then left rotate
+ * Binary tree is balanced from inserted node to root until each node is balanced 
+ *  
+ */
 public class AVLTree {
 
 	private AVLNode root;
@@ -85,7 +97,7 @@ public class AVLTree {
 			}
 		}
 		if(node != null){
-			node.height = Math.max(height(node.left), height(node.right)) + 1;
+//			node.height = Math.max(height(node.left), height(node.right)) + 1;
 			
 			// STEP 3: GET THE BALANCE FACTOR OF THIS NODE (to check whether
 			//  this node became unbalanced)
@@ -183,8 +195,8 @@ public class AVLTree {
 		node.right = root.left;
 		root.left = node;
 
-		node.height = Math.max(height(node.left), height(node.right));
-		root.height = Math.max(height(root.left), height(root.right));
+//		node.height = Math.max(height(node.left), height(node.right));
+//		root.height = Math.max(height(root.left), height(root.right));
 		return root;
 	}
 
@@ -193,8 +205,8 @@ public class AVLTree {
 		node.left = tempRoot.right;
 		tempRoot.right = node;
 		
-		node.height = Math.max(height(node.left), height(node.right));
-		tempRoot.height = Math.max(height(tempRoot.left), height(tempRoot.right));
+//		node.height = Math.max(height(node.left), height(node.right));
+//		tempRoot.height = Math.max(height(tempRoot.left), height(tempRoot.right));
 		return tempRoot;
 	}
 
@@ -216,7 +228,7 @@ public class AVLTree {
 
 class AVLNode{
 	int value;
-	int height;
+//	int height;
 	AVLNode left;
 	AVLNode right;
 	
